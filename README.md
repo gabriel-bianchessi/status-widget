@@ -2,6 +2,10 @@
 
 Widget Electron sempre visivel para acompanhar uso do Claude e Codex/OpenAI.
 
+## Preview
+
+![Screenshot do Status Widget](docs/status-widget-preview.png)
+
 ## Requisitos
 
 - Node.js instalado para desenvolvimento.
