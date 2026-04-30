@@ -1,10 +1,10 @@
 type StatusWidgetApi = {
   close: () => void;
   getCards: () => Promise<CardId[]>;
-  getStatus: (id: 'claude' | 'codex') => Promise<StatusResponse>;
+  getStatus: (id: 'claude' | 'codex' | 'opencodego') => Promise<StatusResponse>;
 };
 
-type CardId = 'claude' | 'codex';
+type CardId = 'claude' | 'codex' | 'opencodego';
 
 type StatusResponse = {
   texto?: string;
@@ -39,6 +39,12 @@ const allCards: Record<CardId, StatusCard> = {
   codex: {
     id: 'codex',
     title: '.: Codex :.',
+    percentField: 'usedPercent',
+    resetField: 'reset_at',
+  },
+  opencodego: {
+    id: 'opencodego',
+    title: '.: OpenCodeGo :.',
     percentField: 'usedPercent',
     resetField: 'reset_at',
   },
