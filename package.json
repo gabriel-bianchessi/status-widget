@@ -1,0 +1,38 @@
+{
+  "name": "status-electron",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Always-on-top Electron status widget for Claude and Codex usage.",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "npm run build && electron .",
+    "start": "electron .",
+    "dist": "npm run build && electron-packager . \"Status Widget\" --platform=win32 --arch=x64 --out=dist-release --overwrite --ignore=dist-release --ignore=src/.*\\.ts$ --ignore=\\.env$ --ignore=\\.env\\.example$"
+  },
+  "build": {
+    "appId": "com.ustudio.statuswidget",
+    "productName": "Status Widget",
+    "directories": {
+      "output": "dist-release"
+    },
+    "files": [
+      "dist/**/*",
+      "src/index.html",
+      "src/styles.css",
+      "package.json"
+    ],
+    "win": {
+      "target": "dir"
+    }
+  },
+  "dependencies": {
+    "@electron/remote": "^2.1.2"
+  },
+  "devDependencies": {
+    "@electron/packager": "^20.0.0",
+    "electron": "^30.5.1",
+    "electron-builder": "^24.13.3",
+    "typescript": "^5.8.3"
+  }
+}
